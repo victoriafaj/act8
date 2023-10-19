@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cambio de Color de Fondo</title>
+</head>
+<body>
+  <button id="changeColorButton">Cambiar Color de Fondo</button>
+  <p id="colorChangeCount">Número de cambios de color: <span id="count">0</span></p>
+
+  <script>
+    let colorChangeCount = 0;
+
+
+    function changeBackgroundColor() {
+      const colors = ["#ff5733", "#33ff57", "#5733ff", "#ffff33", "#33ffff"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor
+      colorChangeCount++;
+      document.getElementById("count").textContent = colorChangeCount;
+    }
+
+    document.getElementById("changeColorButton").addEventListener("click", changeBackgroundColor);
+  </script>
+</body>
+</html>
